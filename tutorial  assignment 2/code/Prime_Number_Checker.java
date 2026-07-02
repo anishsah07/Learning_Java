@@ -6,8 +6,11 @@ public class Prime_Number_Checker {
 
         System.out.print("Enter a number to check: ");
         int num = scanner.nextInt();
+        scanner.nextln();
+        
 
         boolean isPrime = true;
+        
 
         
         if (num <= 1) {
