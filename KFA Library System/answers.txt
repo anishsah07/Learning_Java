@@ -1,0 +1,15 @@
+Encapsulation buys us control over how the fields of Book are accessed and modified.
+By making the fields private and providing public getters/setters (with validation in the setter for price),
+we prevent external code from setting an invalid price or directly mutating the available flag without
+going through the intended methods. A class with public fields would allow any code to assign nonsense
+values, breaking the object's invariants.
+
+A class is a blueprint or template that defines the structure and behavior (fields and methods) that
+objects of that type will have. An object is a concrete instance of that class—for example, a specific
+copy of "Clean Code" on the shelf with its own title, author, ISBN, price, and availability status.
+
+We made totalBooks static because it belongs to the class as a whole, not to any individual Book.
+If totalBooks were an instance field, each Book would have its own copy, and incrementing it in the
+constructor would only affect that particular object's copy, leaving the others unchanged. The static
+field ensures there is a single shared counter that accurately reflects the total number of Book
+objects created across the entire program.
